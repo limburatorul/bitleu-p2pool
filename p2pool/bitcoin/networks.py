@@ -45,7 +45,7 @@ nets = dict(
         POW_FUNC=lambda header: pack.IntType(256).unpack(__import__('yac_scrypt').getPoWHash(header, data.block_header_type.unpack(header)['timestamp'])),
         BLOCK_PERIOD=60, # s
         SYMBOL='YAC',
-        CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'yacoin') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/yacoin/') if platform.system() == 'Darwin' else os.path.expanduser('~/.yacoin'), 'yacoin.conf'),
+        CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'yacoin') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/yacoin/') if platform.system() == 'Darwin' else os.path.expanduser('~/.bitleu/src'), 'Bitleu.conf'),
         BLOCK_EXPLORER_URL_PREFIX='http://yacexplorer.tk/block/',
         ADDRESS_EXPLORER_URL_PREFIX='http://yacexplorer.tk/address/',
         SANE_TARGET_RANGE=(2**256//2**20//1000 - 1, 2**256//2**20 - 1),
@@ -65,7 +65,7 @@ nets = dict(
         POW_FUNC=lambda data: pack.IntType(256).unpack(__import__('ltc_scrypt').getPoWHash(data)),
         BLOCK_PERIOD=600, # s
         SYMBOL='tNVC',
-        CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'YaCoin') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/YaCoin/') if platform.system() == 'Darwin' else os.path.expanduser('~/.yacoin'), 'yacoin.conf'),
+        CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'YaCoin') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/YaCoin/') if platform.system() == 'Darwin' else os.path.expanduser('~/.bitleu/src'), 'Bitleu.conf'),
         BLOCK_EXPLORER_URL_PREFIX='http://nonexistent-yacoin-testnet-explorer/block/',
         ADDRESS_EXPLORER_URL_PREFIX='http://nonexistent-yacoin-testnet-explorer/address/',
         SANE_TARGET_RANGE=(2**256//1000000000 - 1, 2**256//1000 - 1),
